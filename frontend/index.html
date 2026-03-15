@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>FSDL-Lab Attendence</title>
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+  <nav class="navbar">
+    <a href="index.html" class="navbar-brand">
+      <div class="brand-icon">PCCOE</div>
+      <span class="brand-name">Attendence<span>Portal</span></span>
+    </a>
+    <ul class="nav-links">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="teacherLogin.html">Login</a></li>
+      <li><a href="teacherRegister.html">Register</a></li>
+    </ul>
+  </nav>
+
+  <div class="page-wrapper">
+    <div class="teacher-hero fade-in">
+      <div>
+        <h1 class="page-title">Welcome to <span class="highlight">Student Attendence</span></h1>
+        <p class="page-subtitle">Register as a teacher, log in securely, and open your own attendance workspace with isolated data.</p>
+      </div>
+      <div class="teacher-hero-chip">Secure Teacher Access</div>
+    </div>
+
+    <div class="subject-card-grid">
+      <a href="teacherRegister.html" class="subject-card fade-in">
+        <div class="subject-card-tag">New Account</div>
+        <div class="subject-card-name">Teacher Registration</div>
+        <div class="subject-card-desc">Create your teacher account and assign one or more subjects.</div>
+      </a>
+
+      <a href="teacherLogin.html" class="subject-card fade-in" style="animation-delay:0.08s">
+        <div class="subject-card-tag">Existing Account</div>
+        <div class="subject-card-name">Teacher Login</div>
+        <div class="subject-card-desc">Sign in and continue to your own dashboard, students, attendance, and records.</div>
+      </a>
+    </div>
+
+    <div class="card fade-in" style="margin-top:2rem">
+      <div class="card-title">How It Works</div>
+      <div class="landing-steps">
+        <div class="landing-step">
+          <div class="landing-step-no">1</div>
+          <div>
+            <div class="landing-step-title">Register</div>
+            <div class="landing-step-desc">Create a teacher account with your subjects.</div>
+          </div>
+        </div>
+        <div class="landing-step">
+          <div class="landing-step-no">2</div>
+          <div>
+            <div class="landing-step-title">Login</div>
+            <div class="landing-step-desc">Access only the subjects linked to your account.</div>
+          </div>
+        </div>
+        <div class="landing-step">
+          <div class="landing-step-no">3</div>
+          <div>
+            <div class="landing-step-title">Use Your Workspace</div>
+            <div class="landing-step-desc">Open Dashboard, Manage Students, Mark Attendance, and View Records for your own data only.</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script src="js/teacher.js"></script>
+</body>
+</html>

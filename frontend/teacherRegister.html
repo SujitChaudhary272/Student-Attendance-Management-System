@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Teacher Registration - Attendance Portal</title>
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+  <nav class="navbar">
+    <a href="index.html" class="navbar-brand">
+      <div class="brand-icon">PCCOE</div>
+      <span class="brand-name">Attendence<span>Portal</span></span>
+    </a>
+    <ul class="nav-links">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="teacherLogin.html">Login</a></li>
+    </ul>
+  </nav>
+
+  <div class="page-wrapper">
+    <div class="auth-shell fade-in">
+      <div class="auth-card">
+        <div class="page-header" style="margin-bottom:1.5rem">
+          <h1 class="page-title">Teacher <span class="highlight">Registration</span></h1>
+          <p class="page-subtitle">Create a secure teacher account and register one or more subjects.</p>
+        </div>
+
+        <div id="teacherRegisterAlert"></div>
+
+        <form id="teacherRegisterForm" onsubmit="registerTeacher(event)">
+          <div class="form-group">
+            <label class="form-label" for="teacherName">Teacher Name</label>
+            <input type="text" id="teacherName" class="form-control" placeholder="e.g. Mr. Sharma" required />
+          </div>
+
+          <div class="form-group">
+            <label class="form-label" for="teacherEmail">Email</label>
+            <input type="email" id="teacherEmail" class="form-control" placeholder="teacher@example.com" required />
+          </div>
+
+          <div class="form-group">
+            <label class="form-label" for="teacherPassword">Password</label>
+            <input type="password" id="teacherPassword" class="form-control" placeholder="Minimum 6 characters" required />
+          </div>
+
+          <div class="form-group">
+            <label class="form-label" for="teacherSubjects">Subjects</label>
+            <textarea
+              id="teacherSubjects"
+              class="form-control"
+              rows="4"
+              placeholder="Enter subjects separated by commas, e.g. Math, Physics, Chemistry"
+              required
+            ></textarea>
+          </div>
+
+          <button type="submit" class="btn btn-primary btn-full btn-lg" id="teacherRegisterBtn">Create Account</button>
+        </form>
+
+        <div class="auth-footer">
+          Already registered? <a href="teacherLogin.html">Login here</a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script src="js/teacher.js"></script>
+</body>
+</html>

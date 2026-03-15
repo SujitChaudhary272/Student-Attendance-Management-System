@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Teacher Dashboard - FSDL-Lab Attendance</title>
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+  <nav class="navbar">
+    <a href="index.html" class="navbar-brand">
+      <div class="brand-icon">PCCOE</div>
+      <span class="brand-name">Attendence<span>Portal</span></span>
+    </a>
+    <ul class="nav-links">
+      <li><a href="teacherDashboard.html">Teacher Dashboard</a></li>
+      <li><button type="button" class="nav-action-btn" onclick="logoutTeacher()">Logout</button></li>
+    </ul>
+  </nav>
+
+  <div class="page-wrapper">
+    <div class="teacher-hero fade-in">
+      <div>
+        <p class="eyebrow">Teacher Workspace</p>
+        <h1 class="page-title">Welcome, <span class="highlight" id="teacherWelcomeName">Teacher</span></h1>
+        <p class="page-subtitle">Choose one of your registered subjects to mark attendance and save it to your own records.</p>
+      </div>
+      <div class="teacher-hero-chip" id="teacherSubjectCount">0 Subjects</div>
+    </div>
+
+    <div id="teacherDashboardAlert"></div>
+
+    <div class="section-title">Your Subjects</div>
+    <div id="teacherSubjectsGrid" class="subject-card-grid">
+      <div style="text-align:center;padding:2rem"><span class="spinner"></span></div>
+    </div>
+  </div>
+
+  <script src="js/teacher.js"></script>
+</body>
+</html>

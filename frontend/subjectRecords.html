@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Subject Records - FSDL-Lab Attendance</title>
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+  <nav class="navbar">
+    <a href="teacherDashboard.html" class="navbar-brand">
+      <div class="brand-icon">PCCOE</div>
+      <span class="brand-name"><span id="subjectBrandName">Subject</span><span>Portal</span></span>
+    </a>
+    <ul class="nav-links subject-nav-links">
+      <li><a href="#" id="subjectNavDashboard">Dashboard</a></li>
+      <li><a href="#" id="subjectNavStudents">Manage Students</a></li>
+      <li><a href="#" id="subjectNavAttendance">Mark Attendance</a></li>
+      <li><a href="#" id="subjectNavRecords">View Records</a></li>
+      <li><button type="button" class="nav-action-btn" onclick="logoutTeacher()">Logout</button></li>
+    </ul>
+  </nav>
+
+  <div class="page-wrapper">
+    <div class="page-header fade-in">
+      <p class="eyebrow">Subject Workspace</p>
+      <h1 class="page-title"><span class="highlight" id="subjectRecordsTitle">Subject</span> Records</h1>
+      <p class="page-subtitle">View attendance percentages and detailed date-wise records for this subject only.</p>
+    </div>
+
+    <div id="subjectRecordsAlert"></div>
+
+    <div class="records-layout">
+      <div class="card fade-in">
+        <div class="card-title">Subject Overview</div>
+        <div class="records-toolbar">
+          <input
+            type="search"
+            id="subjectRecordSearch"
+            class="form-control"
+            placeholder="Search by student name"
+          />
+        </div>
+        <div id="subjectRecordsTableWrap">
+          <div style="text-align:center;padding:2rem"><span class="spinner"></span></div>
+        </div>
+      </div>
+
+      <div class="card fade-in">
+        <div class="card-title">Student Detail</div>
+        <div id="subjectStudentRecordDetail">
+          <div class="empty-state">
+            <div class="empty-icon">Records</div>
+            <div class="empty-title">Select a student</div>
+            <div class="empty-desc">Choose a student from the subject table to view detailed records.</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script src="js/teacher.js"></script>
+</body>
+</html>

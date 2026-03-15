@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>View Attendance - Attendence Portal</title>
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+
+  <nav class="navbar">
+    <a href="index.html" class="navbar-brand">
+      <div class="brand-icon">PCCOE</div>
+      <span class="brand-name">Attendence<span>Portal</span></span>
+    </a>
+    <ul class="nav-links">
+      <li><a href="index.html">Dashboard</a></li>
+      <li><a href="addStudent.html">Add Student</a></li>
+      <li><a href="attendance.html">Mark Attendance</a></li>
+      <li><a href="viewAttendance.html">View Records</a></li>
+    </ul>
+  </nav>
+
+  <div class="page-wrapper">
+    <div class="page-header fade-in">
+      <h1 class="page-title">Attendance <span class="highlight">Records</span></h1>
+      <p class="page-subtitle">See every student's attendance percentage and open detailed present and absent days by clicking the student name or percentage.</p>
+    </div>
+
+    <div id="viewAlert"></div>
+
+    <div class="records-layout">
+      <div class="card fade-in">
+        <div class="card-title">Class Overview</div>
+        <div class="records-toolbar">
+          <input
+            type="search"
+            id="studentSearch"
+            class="form-control"
+            placeholder="Search by student name"
+            aria-label="Search students by name"
+          />
+        </div>
+        <div id="recordsTableWrap">
+          <div style="text-align:center;padding:2rem"><span class="spinner"></span></div>
+        </div>
+      </div>
+
+      <div class="card fade-in">
+        <div class="card-title">Student Detail</div>
+        <div id="attendanceResults">
+          <div class="empty-state">
+            <div class="empty-icon">Records</div>
+            <div class="empty-title">Select a student</div>
+            <div class="empty-desc">Click a student name or attendance percentage to view present and absent days.</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script src="js/script.js"></script>
+</body>
+</html>

@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Subject Dashboard - FSDL-Lab Attendance</title>
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+  <nav class="navbar">
+    <a href="teacherDashboard.html" class="navbar-brand">
+      <div class="brand-icon">PCCOE</div>
+      <span class="brand-name"><span id="subjectBrandName">Subject</span><span>Portal</span></span>
+    </a>
+    <ul class="nav-links subject-nav-links">
+      <li><a href="#" id="subjectNavDashboard">Dashboard</a></li>
+      <li><a href="#" id="subjectNavStudents">Manage Students</a></li>
+      <li><a href="#" id="subjectNavAttendance">Mark Attendance</a></li>
+      <li><a href="#" id="subjectNavRecords">View Records</a></li>
+      <li><button type="button" class="nav-action-btn" onclick="logoutTeacher()">Logout</button></li>
+    </ul>
+  </nav>
+
+  <div class="page-wrapper">
+    <div class="teacher-hero fade-in">
+      <div>
+        <p class="eyebrow">Subject Workspace</p>
+        <h1 class="page-title"><span class="highlight" id="subjectDashboardTitle">Subject</span> Dashboard</h1>
+        <p class="page-subtitle" id="subjectDashboardSubtitle">Your dashboard for this subject only.</p>
+      </div>
+      <div class="teacher-hero-chip" id="subjectTeacherName">Teacher</div>
+    </div>
+
+    <div id="subjectDashboardAlert"></div>
+
+    <div class="stats-grid">
+      <div class="stat-card fade-in">
+        <div class="stat-icon">S</div>
+        <div class="stat-info">
+          <div class="stat-value" id="subjectTotalStudents">0</div>
+          <div class="stat-label">Subject Students</div>
+        </div>
+      </div>
+      <div class="stat-card fade-in" style="animation-delay:0.1s">
+        <div class="stat-icon">P</div>
+        <div class="stat-info">
+          <div class="stat-value" id="subjectPresentToday">0</div>
+          <div class="stat-label">Present Today</div>
+        </div>
+      </div>
+      <div class="stat-card fade-in" style="animation-delay:0.2s">
+        <div class="stat-icon">A</div>
+        <div class="stat-info">
+          <div class="stat-value" id="subjectAbsentToday">0</div>
+          <div class="stat-label">Absent Today</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="section-title">Subject Actions</div>
+    <div class="quick-actions">
+      <a href="#" class="action-card fade-in" id="subjectActionStudents">
+        <div class="action-card-icon">+</div>
+        <div class="action-card-text">
+          <div class="action-title">Manage Students</div>
+          <div class="action-desc">Add or remove students for this subject</div>
+        </div>
+        <div class="action-card-arrow">-></div>
+      </a>
+
+      <a href="#" class="action-card fade-in" style="animation-delay:0.1s" id="subjectActionAttendance">
+        <div class="action-card-icon blue">M</div>
+        <div class="action-card-text">
+          <div class="action-title">Mark Attendance</div>
+          <div class="action-desc">Save attendance for this subject only</div>
+        </div>
+        <div class="action-card-arrow">-></div>
+      </a>
+
+      <a href="#" class="action-card fade-in" style="animation-delay:0.2s" id="subjectActionRecords">
+        <div class="action-card-icon purple">R</div>
+        <div class="action-card-text">
+          <div class="action-title">View Records</div>
+          <div class="action-desc">Inspect subject-wise student attendance</div>
+        </div>
+        <div class="action-card-arrow">-></div>
+      </a>
+    </div>
+
+    <div class="card fade-in">
+      <div class="card-title">Recent Attendance Dates</div>
+      <div id="subjectDashboardRecentWrap">
+        <div style="text-align:center;padding:2rem"><span class="spinner"></span></div>
+      </div>
+    </div>
+  </div>
+
+  <script src="js/teacher.js"></script>
+</body>
+</html>

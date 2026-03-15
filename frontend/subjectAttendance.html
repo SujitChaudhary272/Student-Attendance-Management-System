@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Subject Attendance - FSDL-Lab Attendance</title>
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+  <nav class="navbar">
+    <a href="teacherDashboard.html" class="navbar-brand">
+      <div class="brand-icon">PCCOE</div>
+      <span class="brand-name"><span id="subjectBrandName">Subject</span><span>Portal</span></span>
+    </a>
+    <ul class="nav-links subject-nav-links">
+      <li><a href="#" id="subjectNavDashboard">Dashboard</a></li>
+      <li><a href="#" id="subjectNavStudents">Manage Students</a></li>
+      <li><a href="#" id="subjectNavAttendance">Mark Attendance</a></li>
+      <li><a href="#" id="subjectNavRecords">View Records</a></li>
+      <li><button type="button" class="nav-action-btn" onclick="logoutTeacher()">Logout</button></li>
+    </ul>
+  </nav>
+
+  <div class="page-wrapper">
+    <div class="page-header fade-in">
+      <p class="eyebrow">Protected Subject View</p>
+      <h1 class="page-title"><span class="highlight" id="subjectPageTitle">Subject</span> Attendance</h1>
+      <p class="page-subtitle" id="subjectPageSubtitle">Mark attendance for your selected subject.</p>
+    </div>
+
+    <div id="subjectAttendanceAlert"></div>
+
+    <div class="card fade-in attendance-sheet-card">
+      <div class="card-title">Attendance Sheet</div>
+
+      <form id="subjectAttendanceForm" onsubmit="saveSubjectAttendance(event)">
+        <div class="attendance-toolbar">
+          <div class="form-group" style="margin-bottom:0">
+            <label class="form-label" for="subjectAttendanceDate">Date</label>
+            <input type="date" id="subjectAttendanceDate" class="form-control" />
+          </div>
+
+          <div class="attendance-actions">
+            <button type="button" class="btn btn-outline" onclick="toggleAllSubjectAttendance(true)">Mark All Present</button>
+            <button type="button" class="btn btn-outline" onclick="toggleAllSubjectAttendance(false)">Clear All</button>
+            <button type="button" class="btn btn-outline" onclick="loadSubjectAttendancePage()">Load Selected Date</button>
+          </div>
+        </div>
+
+        <div class="edit-date-banner" id="subjectEditDateBanner">Choose a date to load or update attendance for this subject.</div>
+
+        <div class="summary-bar compact-summary">
+          <div class="summary-stat">
+            <div class="val accent" id="subjectSheetTotalStudents">0</div>
+            <div class="lbl">Students</div>
+          </div>
+          <div class="summary-stat">
+            <div class="val green" id="subjectSheetPresentCount">0</div>
+            <div class="lbl">Present</div>
+          </div>
+          <div class="summary-stat">
+            <div class="val red" id="subjectSheetAbsentCount">0</div>
+            <div class="lbl">Absent</div>
+          </div>
+        </div>
+
+        <div id="subjectAttendanceSheet" class="attendance-sheet">
+          <div style="text-align:center;padding:2rem"><span class="spinner"></span></div>
+        </div>
+
+        <div style="margin-top:1.5rem">
+          <button type="submit" class="btn btn-primary btn-full btn-lg" id="subjectMarkBtn">Save Subject Attendance</button>
+        </div>
+      </form>
+    </div>
+
+    <div class="card fade-in">
+      <div class="card-title">Recent Saved Dates</div>
+      <div id="subjectRecordsWrap">
+        <div style="text-align:center;padding:2rem"><span class="spinner"></span></div>
+      </div>
+    </div>
+  </div>
+
+  <script src="js/teacher.js"></script>
+</body>
+</html>

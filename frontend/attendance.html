@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Mark Attendance - FSDL-Lab Attendence</title>
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+
+  <nav class="navbar">
+    <a href="index.html" class="navbar-brand">
+      <div class="brand-icon">PCCOE</div>
+      <span class="brand-name">Attendence<span>Portal</span></span>
+    </a>
+    <ul class="nav-links">
+      <li><a href="index.html">Dashboard</a></li>
+      <li><a href="addStudent.html">Add Student</a></li>
+      <li><a href="attendance.html">Mark Attendance</a></li>
+      <li><a href="viewAttendance.html">View Records</a></li>
+    </ul>
+  </nav>
+
+  <div class="page-wrapper">
+    <div class="page-header fade-in">
+      <h1 class="page-title">Mark <span class="highlight">Attendance</span></h1>
+      <p class="page-subtitle">Choose one date for the whole class, tick present students, and leave absent students unchecked.</p>
+    </div>
+
+    <div class="card fade-in attendance-sheet-card">
+      <div class="card-title">Attendance Sheet</div>
+      <div id="attendanceAlert"></div>
+
+      <form id="attendanceForm" onsubmit="markAttendance(event)">
+        <div class="attendance-toolbar">
+          <div class="form-group" style="margin-bottom:0">
+            <label class="form-label" for="attendanceDate">Date</label>
+            <input type="date" id="attendanceDate" class="form-control" onchange="refreshAttendanceSheet()" />
+          </div>
+
+          <div class="attendance-actions">
+            <button type="button" class="btn btn-outline" onclick="toggleAllAttendance(true)">Mark All Present</button>
+            <button type="button" class="btn btn-outline" onclick="toggleAllAttendance(false)">Clear All</button>
+            <button type="button" class="btn btn-outline" onclick="refreshAttendanceSheet()">Load Selected Date</button>
+          </div>
+        </div>
+
+        <div class="edit-date-banner" id="editDateBanner">Choose a date to load or edit attendance for that day.</div>
+
+        <div class="summary-bar compact-summary">
+          <div class="summary-stat">
+            <div class="val accent" id="sheetTotalStudents">0</div>
+            <div class="lbl">Students</div>
+          </div>
+          <div class="summary-stat">
+            <div class="val green" id="sheetPresentCount">0</div>
+            <div class="lbl">Present</div>
+          </div>
+          <div class="summary-stat">
+            <div class="val red" id="sheetAbsentCount">0</div>
+            <div class="lbl">Absent</div>
+          </div>
+        </div>
+
+        <div id="attendanceSheet" class="attendance-sheet">
+          <div style="text-align:center;padding:2rem"><span class="spinner"></span></div>
+        </div>
+
+        <div style="margin-top:1.5rem">
+          <button type="submit" class="btn btn-primary btn-full btn-lg" id="markBtn">Save Attendance</button>
+        </div>
+      </form>
+    </div>
+
+    <div class="alert alert-info fade-in" style="margin-top:0">
+      If attendance is already marked for the selected date, saving again will update the same day.
+    </div>
+  </div>
+
+  <script src="js/script.js"></script>
+</body>
+</html>
