@@ -1,6 +1,6 @@
 # Student Attendance Management System
 
-A beginner-friendly full-stack college project built with **Node.js**, **Express.js**, **MongoDB**, and **Vanilla JavaScript**.
+A beginner-friendly full-stack college project built with **Node.js**, **Express.js**, **MongoDB**, and **JavaScript**.
 
 This project helps manage student attendance with a simple interface for teachers. It includes teacher registration and login, subject-wise dashboards, student management, attendance marking, and attendance record viewing.
 
