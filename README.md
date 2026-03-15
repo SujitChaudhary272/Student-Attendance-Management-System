@@ -1,4 +1,4 @@
-# 🎓 AttendIQ — Student Attendance Management System
+# Student Attendance Management System
 
 A beginner-friendly, full-stack college project built with **Node.js**, **Express.js**, **MongoDB**, and **Vanilla JS**.
 
